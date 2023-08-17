@@ -92,11 +92,11 @@ void q(bool button) { // ikke fjern denne linjen!
 
 
 void triangle(bool button) { // ikke fjern denne linjen!
-   carFart+=5;
+  carFart+=10
 }
 
 void circle(bool button) { // ikke fjern denne linjen!
-   carFart-=5;
+   carFart-=10
 }
 
 void square(bool button) { // ikke fjern denne linjen!
