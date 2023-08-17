@@ -7,7 +7,7 @@ float MOTOR_TURNS_PER_WHEEL_TURN = 75.0;
 float MILLIMETERS_PER_WHEEL_TURN = 122.52211349;
 float carSpeed = 0;
 float avstand = 0;
-float carFart = 50;
+float carFart = 100;
 
 
 void setup() {
@@ -29,10 +29,8 @@ void loop() { // ikke fjern denne linjen!
   car.data[PROXIMITY].flag = false;
   avstand = car.data[PROXIMITY].value;
   car.sendData(2, avstand);
+  }
 }
-
-}
-
 
 
 // dette er koden for kjøre framover
@@ -49,7 +47,7 @@ void w(bool button) { // ikke fjern denne linjen!
 
 void a(bool button) { // ikke fjern denne linjen!
    if (button == DOWN) {
-     car.drive(-50, 50);
+     car.drive(-100, 100);
    }
    if (button == UP) {
      car.drive(0, 0);
@@ -58,7 +56,7 @@ void a(bool button) { // ikke fjern denne linjen!
 
 void s(bool button) { // ikke fjern denne linjen!
    if (button == DOWN) {
-     car.drive(-50, -50);
+     car.drive(-carFart, -carFart);
    }
    if (button == UP){
      car.drive(0, 0);
@@ -67,7 +65,7 @@ void s(bool button) { // ikke fjern denne linjen!
 
 void d(bool button) { // ikke fjern denne linjen!
    if (button == DOWN){
-     car.drive(50, -50);
+     car.drive(100, -100);
    }
    if (button == UP){
      car.drive(0, 0);
@@ -76,7 +74,7 @@ void d(bool button) { // ikke fjern denne linjen!
 
 void e(bool button) { // ikke fjern denne linjen!
    if (button == DOWN){
-     car.drive(50,33);
+     car.drive(carFart,carFart/1.6);
    }
    if (button == UP){
      car.drive(0, 0);
@@ -85,7 +83,7 @@ void e(bool button) { // ikke fjern denne linjen!
 
 void q(bool button) { // ikke fjern denne linjen!
     if (button == DOWN){
-     car.drive(33,50);
+     car.drive(carFart/1.6, carFart);
    }
    if (button == UP){
      car.drive(0, 0);
